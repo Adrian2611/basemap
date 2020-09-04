@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<!-- From W3 -->
+        <!-- Basemap -->
+		<title>Basemap</title>
+		<!-- Description -->
+		<meta name="description" content="Basemap">
+		<!-- Keyword -->
+		<meta name="keywords" content="HTML, CSS, JavaScript, leaflet, mapbox">
+		<!-- Author -->
+		<meta name="author" content="Adrian">
+		<!-- Leaflet Css-->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+		<!-- Leaflet js-->
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+		<!-- Ensure cross platform compatibility obtained from leaflet library-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!-- Style -->
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+			}
+			html, body, #mymap {
+				height: 100%;
+				width: 100vw;
+			}
+		</style>
+    </head>
+
+    <body>
+		<div id="mymap"></div>
+		<!-- Java Scripts-->
+		<script type="text/javascript">
+			//Tutorial Layer - Obtained from leaflet map
+			var tutorialLayer = L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+					attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+					maxZoom: 18,
+					minZoom: 1
+				});
+			//Tutorial Layer - Obtained from assignment
+			var assigmentLayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+				maxZoom: 18,
+				id: 'mapbox.satellite',
+				accessToken: 'pk.eyJ1Ijoia2VpMTEwIiwiYSI6ImNqcmczdWJzNzFpOXk0NHA0ZDdwaThyZmgifQ.SN2dLbaBpbdlJyE5OCmndQ'
+			});
+			//map
+			var map = L.map('mymap', {
+				center: [-23.6187032, -79.4775624],
+				zoom: 3,
+				layers: [assigmentLayer] //add to map
+			});
+			var baseMaps = {
+				"Assignment": assigmentLayer,
+				"<span style='color: black'>Tutorial</span>": tutorialLayer
+			};
+			//From Leaflet Documents
+			L.control.layers(baseMaps).addTo(map);
+		</script>
+    </body>
+</html>
