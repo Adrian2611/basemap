@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<!-- From W3 -->
-        <!-- Basemap -->
-		<title>Basemap</title>
-		<!-- Description -->
-		<meta name="description" content="Basemap">
-		<!-- Keyword -->
-		<meta name="keywords" content="HTML, CSS, JavaScript, leaflet, mapbox">
-		<!-- Author -->
-		<meta name="author" content="Adrian">
+        <title>Basemap</title>
 		<!-- Leaflet Css-->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -18,7 +10,7 @@
 		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
-		<!-- Ensure cross platform compatibility obtained from leaflet library-->
+		<!-- Ensure cross platform compatibility -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<!-- Style -->
 		<style>
@@ -60,7 +52,6 @@
 				"Assignment": assigmentLayer,
 				"<span style='color: black'>Tutorial</span>": tutorialLayer
 			};
-			//From Leaflet Documents
 			L.control.layers(baseMaps).addTo(map);
 		</script>
     </body>
